@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Bedtime Stories App</h1>
+  <input type="text" [(ngModel)]="prompt" placeholder="Enter a story prompt" />
+  <button (click)="handleGenerate()">Generate</button>
+  <app-slideshow
+    *ngIf="showSlideshow"
+    [imageUrl]="imageUrl"
+    [audioUrl]="audioUrl"
+  ></app-slideshow>
+</div>

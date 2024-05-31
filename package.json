@@ -1,5 +1,5 @@
 {
-  "name": "bedtime-stories-app",
+  "name": "nthu-cs560400-bedtime-stories-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

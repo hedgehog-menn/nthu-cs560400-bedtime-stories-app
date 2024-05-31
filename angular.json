@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bedtime-stories-app": {
+    "nthu-cs560400-bedtime-stories-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/bedtime-stories-app",
+            "outputPath": "dist/nthu-cs560400-bedtime-stories-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "bedtime-stories-app:build:production"
+              "buildTarget": "nthu-cs560400-bedtime-stories-app:build:production"
             },
             "development": {
-              "buildTarget": "bedtime-stories-app:build:development"
+              "buildTarget": "nthu-cs560400-bedtime-stories-app:build:development"
             }
           },
           "defaultConfiguration": "development"

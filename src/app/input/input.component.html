@@ -1,10 +1,17 @@
 <div class="container">
   <h1>Bedtime Stories App</h1>
-  <input type="text" [(ngModel)]="prompt" placeholder="Enter a story prompt" />
-  <button (click)="handleGenerate()">Generate</button>
+  <button (click)="onClickGenerateBtn()" [disabled]="isLoading">Generate Story</button>
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
   <app-slideshow
-    *ngIf="showSlideshow"
-    [imageUrl]="imageUrl"
-    [audioUrl]="audioUrl"
-  ></app-slideshow>
+    [ngClass]="{ 'hidden': !isLoading && audioUrls.length == 0 }"
+    [imageUrls]="imageUrls"
+    [audioUrls]="audioUrls"
+    [storyParts]="storyParts"
+    [generationStarted]="generationStarted"
+    [generationCompleted]="generationCompleted"
+  >
+  </app-slideshow>
+  <div *ngIf="isLoading">
+    <p>Loading, please wait...</p>
+  </div>
 </div>

@@ -8,3 +8,16 @@
   height: auto;
   margin-bottom: 20px;
 }
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.navigation-buttons span {
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: bold;
+}

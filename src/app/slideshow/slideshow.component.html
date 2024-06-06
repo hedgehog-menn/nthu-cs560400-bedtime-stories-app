@@ -5,6 +5,6 @@
     <button (click)="nextSlide()" [disabled]="currentSlideIndex === imageUrls.length - 1">Next</button>
   </div>
   <img [src]="imageUrls[currentSlideIndex]" alt="Generated Story Image" class="story-image" />
-  <audio #audioPlayer controls autoplay (ended)="onAudioEnded()"></audio>
+  <audio #audioPlayer controls autoplay [src]="audioUrls[this.currentSlideIndex]" (ended)="onAudioEnded()"></audio>
   <p>{{ storyParts[currentSlideIndex] }}</p>
 </div>

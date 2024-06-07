@@ -46,6 +46,10 @@ export class InputComponent {
         this.audioUrls.push(audioUrl);
       }
 
+      if (!!this.storyTitle) {
+        this.storyParts.shift();
+      }
+
       this.isLoading = false;
       this.generationCompleted.emit();
     } catch (error) {

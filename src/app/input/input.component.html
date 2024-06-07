@@ -1,9 +1,37 @@
 <div class="container">
   <h1>Bedtime Stories App</h1>
-  <button (click)="onClickGenerateBtn()" [disabled]="isLoading">Generate Story</button>
+  <div class="voice-selection">
+    <label>
+      <input
+        type="radio"
+        name="voice"
+        [disabled]="isLoading"
+        [value]="true"
+        [(ngModel)]="isMaleVoice"
+        checked
+      />
+      Male
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="voice"
+        [disabled]="isLoading"
+        [value]="false"
+        [(ngModel)]="isMaleVoice"
+      />
+      Female
+    </label>
+  </div>
+  <button (click)="onClickGenerateBtn()" [disabled]="isLoading">
+    Generate Story
+  </button>
+  <div class="story-title">
+    <h2>{{ storyTitle }}</h2>
+  </div>
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
   <app-slideshow
-    [ngClass]="{ 'hidden': !isLoading && audioUrls.length == 0 }"
+    [ngClass]="{ hidden: !isLoading && audioUrls.length == 0 }"
     [imageUrls]="imageUrls"
     [audioUrls]="audioUrls"
     [storyParts]="storyParts"

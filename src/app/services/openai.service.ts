@@ -18,7 +18,7 @@ export class OpenaiService {
       {
         role: 'user',
         content:
-          'Generate a bedtime story for kids. Separate it into 3 parts for a slideshow. Every time that mention their name again, add what kind of their creature in a bracket.',
+          'Generate a bedtime story for kids. Generate its title name. Separate a story into 3 paragraphs for 3 show slides. Every time that mention their name again, add what kind of their creature in a bracket.',
       },
     ];
 
@@ -44,12 +44,12 @@ export class OpenaiService {
     const response = await axios.post(
       'https://api.openai.com/v1/images/generations',
       {
-        prompt: prompt + ', no text in image',
+        prompt: prompt + ' (do not inject text inject the image)',
         n: 1,
         // size: '256x256',
         size: '1024x1024',
-        // quality: "standard",
-        quality: 'hd',
+        quality: "standard",
+        // quality: 'hd',
         style: 'vivid',
         model: 'dall-e-3'
       },
@@ -62,13 +62,13 @@ export class OpenaiService {
     return response.data.data[0].url;
   }
 
-  async generateTTS(text: string): Promise<string> {
+  async generateTTS(text: string, isMaleVoice: boolean = true): Promise<string> {
     const response = await axios.post(
       'https://api.openai.com/v1/audio/speech',
       {
         model: 'tts-1',
         input: text,
-        voice: 'shimmer',
+        voice: isMaleVoice ? 'echo' : 'shimmer',
       },
       {
         headers: {

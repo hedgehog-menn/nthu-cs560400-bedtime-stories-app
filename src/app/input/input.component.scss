@@ -17,3 +17,23 @@ button {
 .hidden {
   display: none;
 }
+
+.voice-selection {
+  margin-bottom: 10px;
+
+  label {
+    margin-right: 10px;
+
+    > input {
+      margin: 0;
+      margin-right: 5px;
+      padding: 0;
+      width: auto;
+    }
+  }
+}
+
+.story-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

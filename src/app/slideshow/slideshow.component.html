@@ -1,7 +1,7 @@
 <div class="slideshow-container" *ngIf="!isLoading">
   <div class="navigation-buttons">
     <button (click)="previousSlide()" [disabled]="currentSlideIndex === 0">Previous</button>
-    <span>{{ getSlideTitle(currentSlideIndex) }}</span>
+    <span>Slide {{currentSlideIndex + 1}} / {{imageUrls.length}}</span>
     <button (click)="nextSlide()" [disabled]="currentSlideIndex === imageUrls.length - 1">Next</button>
   </div>
   <img [src]="imageUrls[currentSlideIndex]" alt="Generated Story Image" class="story-image" />

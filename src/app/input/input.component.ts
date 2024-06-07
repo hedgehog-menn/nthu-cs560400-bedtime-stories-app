@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { OpenaiService } from '../services/openai.service';
 
 @Component({

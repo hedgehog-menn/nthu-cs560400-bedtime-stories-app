@@ -6,7 +6,6 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class OpenaiService {
-  // private apiKey = 'your-openai-api-key';
   private apiKey = environment.openaiApiKey;
 
   async generateStoryScript(): Promise<string[]> {
@@ -46,10 +45,8 @@ export class OpenaiService {
       {
         prompt: prompt + ' (do not inject text inject the image)',
         n: 1,
-        // size: '256x256',
         size: '1024x1024',
         quality: "standard",
-        // quality: 'hd',
         style: 'vivid',
         model: 'dall-e-3'
       },

@@ -1,8 +1,14 @@
-import { Component, Input, OnInit, OnDestroy, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnDestroy,
+  EventEmitter,
+} from '@angular/core';
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
-  styleUrls: ['./slideshow.component.scss']
+  styleUrls: ['./slideshow.component.scss'],
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
   @Input() imageUrls: string[] = [];
@@ -15,7 +21,7 @@ export class SlideshowComponent implements OnInit, OnDestroy {
 
   currentSlideIndex = 0;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.generationStarted.subscribe(() => {

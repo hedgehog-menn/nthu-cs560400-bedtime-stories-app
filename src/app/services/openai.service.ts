@@ -17,7 +17,7 @@ export class OpenaiService {
       {
         role: 'user',
         content:
-          'Generate a bedtime story for kids. Generate its title name. Separate a story into 3 paragraphs for 3 show slides. Every time that mention their name again, add what kind of their creature in a bracket.',
+          'Generate a bedtime story for kids. Generate its title name. Separate a story into 3 paragraphs for 3 show slides. Every time that mentions their name again, add what kind of their creature in a bracket after their names again.',
       },
     ];
 

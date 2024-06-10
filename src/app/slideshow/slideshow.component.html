@@ -10,7 +10,37 @@
     </div>
     <div class="blog-card__content">
       <h2 class="blog-card__title">Blog Title</h2>
-      <h3 class="blog-card__subtitle">slide 1 / 3</h3>
+      <div class="blog-card__navigation">
+        <div class="blog-card__button--previous" *ngIf="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 320 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z"
+            />
+          </svg>
+        </div>
+        <h3 class="blog-card__subtitle">Slide 1 / 3</h3>
+        <div class="blog-card__button--next" *ngIf="false">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 320 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z"
+            />
+          </svg>
+        </div>
+      </div>
       <p class="blog-card__text">
         This is a brief description of the blog content. It gives an overview of
         the topic and entices the reader to learn more.

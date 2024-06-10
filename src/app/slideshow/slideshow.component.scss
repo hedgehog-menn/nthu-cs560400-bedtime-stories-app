@@ -1,5 +1,8 @@
 $primary-color: #333;
 $secondary-color: #fff;
+$button-color: #007bff;
+$button-hover-color: #0056b3;
+$button-text-color: #fff;
 $card-padding: 16px;
 $card-border-radius: 8px;
 $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,6 +69,36 @@ audio::-webkit-media-controls-enclosure {
     margin: 0 0 10px 0;
   }
 
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    margin-bottom: 10px;
+
+    .blog-card__subtitle {
+      font-size: 1em;
+      color: $primary-color;
+      margin-right: 10px;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.125em;
+    }
+
+    .blog-card__button--previous {
+      margin-right: 10px;
+    }
+
+    .blog-card__button--previous,
+    .blog-card__button--next {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   &__text {
     font-size: 1em;
     color: $primary-color;
@@ -100,8 +133,8 @@ audio::-webkit-media-controls-enclosure {
       text-align: left;
     }
 
-    &__subtitle {
-      text-align: left;
+    &__navigation {
+      justify-content: left;
     }
   }
 }

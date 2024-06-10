@@ -1,27 +1,14 @@
-<div class="slideshow-container" *ngIf="!isLoading">
-  <div class="navigation-buttons">
-    <button (click)="previousSlide()" [disabled]="currentSlideIndex === 0">
-      Previous
-    </button>
-    <span>Slide {{ currentSlideIndex + 1 }} / {{ imageUrls.length }}</span>
-    <button
-      (click)="nextSlide()"
-      [disabled]="currentSlideIndex === imageUrls.length - 1"
-    >
-      Next
-    </button>
+<div class="container">
+  <div class="blog-card">
+      <div class="blog-card__image">
+          <img src="https://wallpapercave.com/wp/wp4471357.jpg" alt="Blog Image">
+      </div>
+      <div class="blog-card__content">
+          <h2 class="blog-card__title">Blog Title</h2>
+          <h3 class="blog-card__subtitle">slide 1 / 3</h3>
+          <p class="blog-card__text">
+              This is a brief description of the blog content. It gives an overview of the topic and entices the reader to learn more.
+          </p>
+      </div>
   </div>
-  <img
-    [src]="imageUrls[currentSlideIndex]"
-    alt="Generated Story Image"
-    class="story-image"
-  />
-  <audio
-    #audioPlayer
-    controls
-    autoplay
-    [src]="audioUrls[this.currentSlideIndex]"
-    (ended)="onAudioEnded()"
-  ></audio>
-  <p>{{ storyParts[currentSlideIndex] }}</p>
 </div>

@@ -36,7 +36,7 @@ export class InputComponent {
       this.storyParts = await this.openaiService.generateStoryScript();
 
       if (this.storyParts[0].startsWith('Title')) {
-        this.storyTitle = this.storyParts.shift() || '';
+        this.storyTitle = this.storyParts.shift()?.replace('Title: ', '') || '';
       }
 
       // Create an array of promises for generating images and audio

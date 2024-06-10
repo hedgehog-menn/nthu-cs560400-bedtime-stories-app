@@ -13,6 +13,7 @@ import {
 export class SlideshowComponent implements OnInit, OnDestroy {
   @Input() imageUrls: string[] = [];
   @Input() audioUrls: string[] = [];
+  @Input() storyTitle: string = '';
   @Input() storyParts: string[] = [];
   @Input() generationStarted!: EventEmitter<void>;
   @Input() generationCompleted!: EventEmitter<void>;

@@ -27,20 +27,18 @@
   <button (click)="onClickGenerateBtn()" [disabled]="isLoading">
     Generate Story
   </button>
-  <div class="story-title">
-    <h2>{{ storyTitle }}</h2>
-  </div>
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
   <app-slideshow
     [ngClass]="{ hidden: isLoading || audioUrls.length == 0 || !!errorMessage }"
     [imageUrls]="imageUrls"
     [audioUrls]="audioUrls"
+    [storyTitle]="storyTitle"
     [storyParts]="storyParts"
     [generationStarted]="generationStarted"
     [generationCompleted]="generationCompleted"
   >
   </app-slideshow>
   <div *ngIf="isLoading">
-    <p>Loading, please wait...</p>
+    <p class="loading">Loading, please wait</p>
   </div>
 </div>

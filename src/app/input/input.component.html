@@ -32,7 +32,7 @@
   </div>
   <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
   <app-slideshow
-    [ngClass]="{ hidden: !isLoading && audioUrls.length == 0 }"
+    [ngClass]="{ hidden: isLoading || audioUrls.length == 0 || !!errorMessage }"
     [imageUrls]="imageUrls"
     [audioUrls]="audioUrls"
     [storyParts]="storyParts"

@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { OpenaiService } from '../services/openai.service';
+import preloadData from './preload-data-path.json';
 
 @Component({
   selector: 'app-input',
@@ -20,11 +21,12 @@ export class InputComponent {
   constructor(private openaiService: OpenaiService) {}
 
   onClickGenerateBtn() {
-    this.isLoading = true;
-    this.storyTitle = '';
-    this.errorMessage = '';
-    this.generationStarted.emit();
-    this.handleGenerate(this.isMaleVoice);
+    // this.isLoading = true;
+    // this.storyTitle = '';
+    // this.errorMessage = '';
+    // this.generationStarted.emit();
+    // this.handleGenerate(this.isMaleVoice);
+    this.handleGenerateStatic(this.isMaleVoice);
   }
 
   async handleGenerate(isMaleVoice: boolean = true) {
@@ -63,5 +65,14 @@ export class InputComponent {
         'Failed to generate story, image, or audio. Please try again later.';
       console.error('Error generating content:', error);
     }
+  }
+
+  handleGenerateStatic(isMaleVoice: boolean = true) {
+    const data = preloadData[isMaleVoice ? 'male' : 'female'];
+    this.storyTitle = data.title;
+    this.storyParts = [...data.script];
+    this.imageUrls = [...data.image];
+    this.audioUrls = [...data.audio];
+    this.generationCompleted.emit();
   }
 }

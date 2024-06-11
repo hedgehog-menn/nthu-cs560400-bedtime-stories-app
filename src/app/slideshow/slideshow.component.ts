@@ -27,6 +27,7 @@ export class SlideshowComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.generationStarted.subscribe(() => {
       this.isLoading = true;
+      this.currentSlideIndex = 0;
       this.imageUrls = [];
       this.audioUrls = [];
       this.storyParts = [];
